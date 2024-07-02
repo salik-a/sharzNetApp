@@ -16,7 +16,6 @@ const Login = () => {
 
   const handleUserName = useCallback(
     (text: string) => {
-      console.log(text);
       setUserInfos({...userInfos, userName: text});
     },
     [userInfos],
@@ -30,7 +29,6 @@ const Login = () => {
 
   const handleLogin = useCallback(
     (text: string) => {
-      console.log(userInfos);
       if (userInfos.userName !== '' && userInfos.password !== '') {
         const hasUsername = storage.contains('userInfos');
         if (hasUsername) {
