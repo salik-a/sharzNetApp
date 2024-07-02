@@ -7,6 +7,7 @@ export default StyleSheet.create({
     borderRadius: 15,
     borderColor: '#000000',
     justifyContent: 'center',
+    alignItems: 'center',
     borderWidth: 0.5,
     alignSelf: 'center',
     paddingHorizontal: 15,

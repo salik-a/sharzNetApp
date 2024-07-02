@@ -32,13 +32,13 @@ const InputCard: React.FC<IInputCard> = ({
       <TextInput
         onChangeText={onChangeText}
         placeholder={placeholder}
-        secureTextEntry={secureTextEntry}
+        secureTextEntry={isSecure}
         style={styles.textInput}
         placeholderTextColor={'gray'}
         {...rest}
       />
       {secureTextEntry && (
-        <Pressable>
+        <Pressable onPress={handleChangeVisible}>
           <Icon
             name={isSecure ? 'eye-with-line' : 'eye'}
             size={24}

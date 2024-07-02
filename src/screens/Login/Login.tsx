@@ -27,28 +27,25 @@ const Login = () => {
     [userInfos],
   );
 
-  const handleLogin = useCallback(
-    (text: string) => {
-      if (userInfos.userName !== '' && userInfos.password !== '') {
-        const hasUsername = storage.contains('userInfos');
-        if (hasUsername) {
-          const jsonUser = storage.getString('userInfos');
-          const userObject = JSON.parse(jsonUser);
-          if (
-            userInfos.userName === userObject?.userName &&
-            userInfos.password === userObject?.password
-          ) {
-            navigation.navigate('Main');
-          } else {
-            setShowWarning(true);
-          }
-        }
+  const handleLogin = useCallback(() => {
+    console.log(userInfos);
+    const hasUsername = storage.contains('userInfos');
+    console.log(hasUsername);
+    if (userInfos.userName !== '' && userInfos.password !== '' && hasUsername) {
+      const jsonUser = storage.getString('userInfos');
+      const userObject = JSON.parse(jsonUser);
+      if (
+        userInfos.userName === userObject?.userName &&
+        userInfos.password === userObject?.password
+      ) {
+        navigation.navigate('Main');
       } else {
         setShowWarning(true);
       }
-    },
-    [userInfos, navigation],
-  );
+    } else {
+      setShowWarning(true);
+    }
+  }, [userInfos, navigation, storage]);
 
   return (
     <View style={styles.container}>
@@ -59,7 +56,11 @@ const Login = () => {
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.labelText}>Şifre</Text>
-        <InputCard placeholder="Şifre" onChangeText={handlePassword} />
+        <InputCard
+          placeholder="Şifre"
+          onChangeText={handlePassword}
+          secureTextEntry={true}
+        />
       </View>
       {showWarning && (
         <Text style={styles.warningText}>Kullanıcı Bulunamadı</Text>
@@ -82,7 +83,10 @@ const Login = () => {
         type="outline"
         buttonStyle={styles.signUpButton}
         containerStyle={styles.buttonContainer}
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => {
+          setShowWarning(false);
+          navigation.navigate('SignUp');
+        }}
       />
     </View>
   );

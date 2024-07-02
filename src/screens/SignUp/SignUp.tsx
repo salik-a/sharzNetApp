@@ -57,11 +57,19 @@ const SignUp = () => {
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.labelText}>Şifre</Text>
-        <InputCard placeholder="Şifre" onChangeText={handlePassword} />
+        <InputCard
+          placeholder="Şifre"
+          onChangeText={handlePassword}
+          secureTextEntry={true}
+        />
       </View>
       <View style={styles.inputContainer}>
         <Text style={styles.labelText}>Şifre Tekrar</Text>
-        <InputCard placeholder="Şifre Tekrar" onChangeText={handleRePassword} />
+        <InputCard
+          placeholder="Şifre Tekrar"
+          onChangeText={handleRePassword}
+          secureTextEntry={true}
+        />
       </View>
       {showWarning && (
         <Text style={styles.warningText}>Tüm Bilgileri Doğru Doldurunuz</Text>
