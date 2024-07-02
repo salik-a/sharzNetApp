@@ -1,5 +1,9 @@
 Bu uygulamada bir giriş ve kayıt ekranı bulunmaktadır. Kullanıcı bilgileri mmkv paketi ile locale kaydedilerek kayıt olma ve giriş yapma işlemleri gerçekleştiriliyor. Uygulamaya giriş yapıldıktan sonra 3 tablı ekran karşılamaktadır. İlk tab sayfasında daha önceden yapılmış rezervasyonları ikinci tab sayfasında yeni rezervasyon yapma ve üçüncü tab sayfasında rezervasyonların konumlarını harita üzerinde görebilirsiniz. Rezervasyonlar için mock api uygulamasını kullanıp orada mock data oluşturdum. Ayrıca rezervasyonları silebilir ve güncelleyebilirsiniz.
 
+![Proje Ekran Görüntüsü](src/screenshots/sharznet1.png) ![Proje Ekran Görüntüsü](src/screenshots/sharznet2.png)
+![Proje Ekran Görüntüsü](src/screenshots/sharznet3.png) ![Proje Ekran Görüntüsü](src/screenshots/sharznet4.png)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
